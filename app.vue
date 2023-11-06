@@ -21,9 +21,14 @@
       </BaseButton>
     </div>
 
-    <MovieTable :movies="searchResultData?.data" :isLoading="isLoading" />
+    <MovieTable
+      v-show="searchResultData.page"
+      :movies="searchResultData?.data"
+      :isLoading="isLoading"
+    />
 
     <PaginationButtons
+      v-show="searchResultData.page"
       :page="searchResultData.page"
       :totalPages="searchResultData.total_pages"
       @update:page="setPage"

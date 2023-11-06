@@ -7,7 +7,7 @@
             v-for="column in columns"
             :key="column"
             @click="sortBy(column)"
-            class="px-6 py-3 text-left cursor-pointer select-none"
+            class="px-6 py-3 text-left cursor-pointer select-none hover:text-blue-400"
             :class="{ 'border-r': column === 'Title' }"
           >
             {{ column }}
@@ -17,7 +17,15 @@
       <tbody class="divide-y">
         <template v-if="sortedMovies.length">
           <tr v-for="movie in sortedMovies" :key="movie.Title + movie.Year">
-            <td class="px-6 border-r py-4 w-2/3">{{ movie.Title }}</td>
+            <td class="border-r py-4 w-2/3">
+              <a
+                target="_blank"
+                :href="`https://www.imdb.com/title/${movie.imdbID}`"
+                class="px-6 hover:text-blue-400"
+              >
+                {{ movie.Title }}
+              </a>
+            </td>
             <td class="px-6 py-4 w-1/3">{{ movie.Year }}</td>
           </tr>
         </template>
