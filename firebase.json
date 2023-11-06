@@ -1,0 +1,10 @@
+{
+  "hosting": [
+    {
+      "site": "movie-search-80932",
+      "public": ".output/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "cleanUrls": true
+    }
+  ]
+}
