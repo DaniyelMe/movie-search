@@ -1,7 +1,7 @@
-import { ref } from "vue";
+import { ref } from 'vue';
 
 export function useMoviesSearch() {
-  const searchTerm = ref("");
+  const searchTerm = ref('');
   const page = ref(1);
 
   const { data, pending, error, refresh } = useFetch<MoviesApiResponse>(
@@ -9,7 +9,7 @@ export function useMoviesSearch() {
       searchTerm.value &&
       `https://jsonmock.hackerrank.com/api/movies/search/?Title=${searchTerm.value}&page=${page.value}`,
     {
-      key: `movies-search-${searchTerm.value}`, // Cache key
+      key: `movies-search-${searchTerm.value}` // Cache key
     }
   );
 
@@ -27,6 +27,6 @@ export function useMoviesSearch() {
     setPage,
     searchResults: data,
     isLoading: pending,
-    error,
+    error
   };
 }

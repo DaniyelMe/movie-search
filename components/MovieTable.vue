@@ -31,14 +31,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref } from 'vue';
 
-type Column = "Title" | "Year";
+type Column = 'Title' | 'Year';
 
 const props = defineProps<{ movies: Movie[] | [] }>();
 
-const columns = ref<Column[]>(["Title", "Year"]);
-const sortKey = ref<Column | "">("");
+const columns = ref<Column[]>(['Title', 'Year']);
+const sortKey = ref<Column | ''>('');
 const reverse = ref<boolean>(false);
 
 const sortedMovies = computed(() => {

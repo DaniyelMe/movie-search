@@ -1,6 +1,6 @@
 {
-    "trailingComma": "none",
-    "tabWidth": 2,
-    "singleQuote": true,
-    "maxLineLength": 120
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "maxLineLength": 120
 }
